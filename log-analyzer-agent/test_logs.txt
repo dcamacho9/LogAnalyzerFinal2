@@ -1,0 +1,6854 @@
+{
+  "logs": "INFO  2026-09-21 14:00:27,008 [[MuleRuntime].uber.22414: [edl-soap].api-main.BLOCKING @682c47bc] [processor: api-main/processors/6; event: 1-088d8870-b5b4-11f1-b281-005056a3eb53] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: Fin
+INFO  2026-09-21 16:00:06,819 [[MuleRuntime].uber.22656: [edl-soap].api-main.CPU_LITE @69a0c4ba] [processor: api-main/processors/0; event: 1-c0360820-b5c4-11f1-b281-005056a3eb53] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: Inicio
+INFO  2026-09-21 16:00:06,819 [[MuleRuntime].uber.22656: [edl-soap].api-main.CPU_LITE @69a0c4ba] [processor: api-main/processors/1; event: 1-c0360820-b5c4-11f1-b281-005056a3eb53] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/"><soap-env:Header/><soap-env:Body><n0:EnviarQueryRequest xmlns:n0="https://api-aplicaciones.ree.es/api/v1/edl-soap" xmlns:prx="urn:sap.com:proxy:P01:/1SAI/TAS47E28AAECF2B82FFA69C:740"><query>Select id_plan_compra, des_suministro, des_fase_compra from apro_dv_plan_compras where tim_ultima_modificacion &gt; '2026-08-22'</query><offset>0</offset><limit>1000</limit></n0:EnviarQueryRequest></soap-env:Body></soap-env:Envelope>
+DEBUG 2026-09-21 16:00:06,826 [[MuleRuntime].uber.22656: [ree-1.0.0-mule-domain].http.requester.HTTP_Request_configuration.requester.workers @6a5d371a] [processor: enviarQuery:\soapkit-config/processors/1; event: 1-c0360820-b5c4-11f1-b281-005056a3eb53] org.mule.service.http.impl.service.HttpMessageLogger.http.requester.HTTP_Request_configuration: REQUESTER
+POST /system-api/v1/edl/query?offset=0&limit=1000 HTTP/1.1
+x-real-ip: /10.131.105.6:8082
+denodo: Basic VUdfU0lHSV9NVUxFX1BSTzpCdDVYakBHUGxoZTQ+eEx6ay1LNi44OSs=
+x-correlation-id: 1-c0360820-b5c4-11f1-b281-005056a3eb53
+Host: api-aplicaciones.ree.es:443
+User-Agent: AHC/1.0
+Connection: keep-alive
+Accept: */*
+Content-Type: application/json; charset=UTF-8
+Transfer-Encoding: chunked
+
+8e
+{
+  "query": "Select id_plan_compra, des_suministro, des_fase_compra from apro_dv_plan_compras where tim_ultima_modificacion > '2026-08-22'"
+}
+
+DEBUG 2026-09-21 16:00:06,826 [[MuleRuntime].uber.22656: [ree-1.0.0-mule-domain].http.requester.HTTP_Request_configuration.requester.workers @6a5d371a] [processor: enviarQuery:\soapkit-config/processors/1; event: 1-c0360820-b5c4-11f1-b281-005056a3eb53] org.mule.service.http.impl.service.HttpMessageLogger.http.requester.HTTP_Request_configuration: REQUESTER
+0
+
+
+DEBUG 2026-09-21 16:00:07,195 [[ree-1.0.0-mule-domain].http.requester.HTTP_Request_configuration.02 SelectorRunner] [processor: enviarQuery:\soapkit-config/processors/1; event: 1-c0360820-b5c4-11f1-b281-005056a3eb53] org.mule.service.http.impl.service.HttpMessageLogger.http.requester.HTTP_Request_configuration: REQUESTER
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 49936
+Date: Mon, 21 Sep 2026 14:00:06 GMT
+
+{
+  "registrosTotales": 358,
+  "ultimoRegistro": 358,
+  "results": [
+    {
+      "id_plan_compra": 4291,
+      "des_suministro": "L_Minglanilla 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4169,
+      "des_suministro": "SE_Las Breñas 66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4547,
+      "des_suministro": "L_Farners-Riudarenes 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4563,
+      "des_suministro": "SE_Farners 400_220 kV (Nueva SE)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4565,
+      "des_suministro": "SE_Magallón 400_220 kV (Ampl. trafo)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4567,
+      "des_suministro": "trabajos de reacondicionamiento externo a SIEMENS ",
+      "des_fase_compra": "En Aprobación"
+    },
+    {
+      "id_plan_compra": 4446,
+      "des_suministro": "SE_Villarrasa 400 kV (Nueva)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4761,
+      "des_suministro": "L_Coliseo-Molines 66kV(Renov.)(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4793,
+      "des_suministro": "OC SE TIAS 66 kV (Proyecto VisynC)",
+      "des_fase_compra": "Licitación: Valoración Cualificación"
+    },
+    {
+      "id_plan_compra": 4617,
+      "des_suministro": "SERVICIO MANTENIMIENTO SISTEMAS DE GESTIÓN EQUIPOS TRANSMISIÓN INSULARES",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5213,
+      "des_suministro": "E_SSebadalL_Buenavista-Muelle66(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5474,
+      "des_suministro": "SE_Freson 400kV (Nueva)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5980,
+      "des_suministro": "SE_Mudarra  400 kV (E-STATCOM)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6007,
+      "des_suministro": "Servicio Mantenimiento DALIA",
+      "des_fase_compra": "Licitación: En curso"
+    },
+    {
+      "id_plan_compra": 5578,
+      "des_suministro": "MODELO PRODUCTO ATLAS",
+      "des_fase_compra": "Licitación: En curso"
+    },
+    {
+      "id_plan_compra": 6185,
+      "des_suministro": "PROYECTO MÓDULO DE TRAMITACIONES, PERMISOS Y MM.AA. ",
+      "des_fase_compra": "Licitación: En curso"
+    },
+    {
+      "id_plan_compra": 5286,
+      "des_suministro": "L_Saleres-Illora 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5287,
+      "des_suministro": "E_S Ventilla (Mijas Norte) 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6210,
+      "des_suministro": "mto sistema gestion SSFO",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6216,
+      "des_suministro": "Ampliación Adecuación Sogepima",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6217,
+      "des_suministro": "Ampliación y prorroga de centrales de seguridad",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6224,
+      "des_suministro": "SE Carroyuelas-Bastidor calidad de onda",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6227,
+      "des_suministro": "SECCIONADORES 220 TORDESILLAS",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5901,
+      "des_suministro": "SE_Puerto de la Luz 66 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 1690,
+      "des_suministro": "EM SE/ San Fernando 400/220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1548,
+      "des_suministro": "E/S Beariz L/ Mesón-Cartelle 400 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1579,
+      "des_suministro": "SE/ Almendrales 400 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2098,
+      "des_suministro": "Adecuación vegetal  SE Caletillas 220kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1924,
+      "des_suministro": "SE/ Platea 400 kV MEM",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2894,
+      "des_suministro": "SE_Gatica 400-220 kV (Ampl. AT2)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2911,
+      "des_suministro": "L_Morella-La Plana 400 kV",
+      "des_fase_compra": "Solped enviada"
+    },
+    {
+      "id_plan_compra": 2564,
+      "des_suministro": "MARINE SURVEY  MAME3",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2657,
+      "des_suministro": "SE_ Fontefría 400-220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2660,
+      "des_suministro": "SE_ Castellar Frontera 400(Adif JDN PIN)",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2933,
+      "des_suministro": "L_Guadiana-Campo Maior 400 kV (Rio Caya)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2945,
+      "des_suministro": "L_Els Aubals-Secuita 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2946,
+      "des_suministro": "E_S Secuita L_Vandellós-Garraf 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2963,
+      "des_suministro": "L_Platea-Requena 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3569,
+      "des_suministro": "SE_Coderas 400 kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3376,
+      "des_suministro": "SE_Olza 400 kV (Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3398,
+      "des_suministro": "L_ Mangraners-Espluga-Begues 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 4208,
+      "des_suministro": "E_SVerneda L_Sagrera-Badalona220(AnexoI)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3827,
+      "des_suministro": "ESP ESTUDIO METOCEANICO E HIDROSED. MAMEN3",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 4085,
+      "des_suministro": "L_Las Rosas-Caletillas 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4193,
+      "des_suministro": "SE_Mogan 66kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4216,
+      "des_suministro": "Servicio de apoyo a las instalaciones de telecomunicaciones.",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 767,
+      "des_suministro": "E/S Campos - L/ El Palmar-Rocamora 400 k Oc+A+I+T",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2030,
+      "des_suministro": "A.TEC. Y REPRES. A BORDO DE EST.MARINOS",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2800,
+      "des_suministro": "SE_Xove 400 kV (Ampl. Offshore)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2816,
+      "des_suministro": "SE_Vall D'uxo 220 kV (Ampl.ApD) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2864,
+      "des_suministro": "SE_Fadrell 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2910,
+      "des_suministro": "L_Morella-La Plana 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2725,
+      "des_suministro": "SE_Talavera 220 kV (Ampl.Apd)(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2731,
+      "des_suministro": "SE_Picon 400 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2937,
+      "des_suministro": "L_ Magaña-Coscurita 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2939,
+      "des_suministro": "L_Otero - Abades 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2952,
+      "des_suministro": "L_Baja T Udalla 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3374,
+      "des_suministro": "SE_Aragon Region 400 (Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3450,
+      "des_suministro": "Acometida MT SE Beariz 400",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 3459,
+      "des_suministro": "SE_Bélgida (Benilloba) 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4258,
+      "des_suministro": "SE_Moncasi 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4119,
+      "des_suministro": "E_S Camarena 400 L_ArañueloMorata",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4482,
+      "des_suministro": "L_C.Romeral-BcoTirajanaIII 220(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 771,
+      "des_suministro": "SE/ O Incio 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1665,
+      "des_suministro": "SE/ Formentera 132 kV MEM",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 4757,
+      "des_suministro": "L_Arguineguín-Sta Águeda-Mogán 66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4769,
+      "des_suministro": "L_Algete-Ardoz 220 kV (Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4615,
+      "des_suministro": "SERVICIO MANTENIMIENTO WORLDLEX",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4844,
+      "des_suministro": "E_S Matorral L_Matorral 66 Kv (Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4970,
+      "des_suministro": "SGV MANTENIMIENTO",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4812,
+      "des_suministro": "L_Ingenio-LaPlana220(Renov.) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4814,
+      "des_suministro": "L_Candelaria-Poligono66(Renov.)(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5093,
+      "des_suministro": "E_SCalaBouL_Sn Ant.-Sn.Jorge66(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5155,
+      "des_suministro": "SE_Yélamos (antes Budia) 400kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5475,
+      "des_suministro": "SE_Parrales 400 kV (Nueva)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5537,
+      "des_suministro": "Servicio Telefonía Móvil y Datos",
+      "des_fase_compra": "Licitación: En curso"
+    },
+    {
+      "id_plan_compra": 6020,
+      "des_suministro": "L_Adrall-Frontera Andorrana 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6060,
+      "des_suministro": "Mantenimiento de sistemas de elevación",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5635,
+      "des_suministro": "Auditoría Calidad del Servicio Ejercicios 2025-2029",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5272,
+      "des_suministro": "L_Abegondo-Eiris 220 kV (Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5288,
+      "des_suministro": "E_S Elda L_Benejama-Petrel 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6208,
+      "des_suministro": "TRANSFORMADORES MT/BT ACEITE 250KVA",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5290,
+      "des_suministro": "SE_Guadame 400 (Ampl. Vill Man)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6212,
+      "des_suministro": "Asistencia Técnica Fabricante (Ingeniería)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6218,
+      "des_suministro": "REPUESTOS DE SECCIONADORES DE MESA",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6219,
+      "des_suministro": "EsIA + Campaña Ambiental Marina para el proyecto de Renovación del cable submarino Lanzarote – La Graciosa",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6223,
+      "des_suministro": "San Seb de los Reyes - Megaphasor",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6225,
+      "des_suministro": "Conjunto Rectif+bateria 60A",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5820,
+      "des_suministro": "SE_Drago 66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5867,
+      "des_suministro": "SERV.LEVANTAMIENTO PROCESOS",
+      "des_fase_compra": "Licitación: En Curso"
+    },
+    {
+      "id_plan_compra": 5884,
+      "des_suministro": "SE_Litoral 400 kV (Compensador)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5898,
+      "des_suministro": "SE_Los Berrocales 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 909,
+      "des_suministro": "SERVICIO DE CIBERSEGURIDAD",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 4382,
+      "des_suministro": "OTROS MATERIALES PARA SECCIONADORES",
+      "des_fase_compra": "Análisis ofertas económicas"
+    },
+    {
+      "id_plan_compra": 4492,
+      "des_suministro": "Talas Beariz-Fontefría",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 4752,
+      "des_suministro": "Apoyo Técnico SGA y EGA",
+      "des_fase_compra": "Análisis ofertas económicas"
+    },
+    {
+      "id_plan_compra": 4760,
+      "des_suministro": "L_S.Catalina-Valldurgen(Renov.)(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4763,
+      "des_suministro": "L_S.J.BalearesMolines66(Renov.)(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4767,
+      "des_suministro": "E_SPuertoGijon220L_CarrioUninsa(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4771,
+      "des_suministro": "E_S Cerros-Estrella-Villaverde(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4772,
+      "des_suministro": "E_SValdecarros-Coslad-Villaverd(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4723,
+      "des_suministro": "L_Drago-Icod 66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4610,
+      "des_suministro": "INTEGRACION GENERAL EQUIPOS TELECOM. 2024-2027",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4845,
+      "des_suministro": "E_S TajuyaLValleAridane-Breñas66(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2808,
+      "des_suministro": "SE_Els Aubals 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2823,
+      "des_suministro": "L_Inter.Navarra-Frontera 400 k(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2853,
+      "des_suministro": "SE_ Chío (Nueva Guía de Isora) 66 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2909,
+      "des_suministro": "SE_Gramanet 220 kV (modif. topológica)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2677,
+      "des_suministro": "L_Adrall-Frontera Andorrana 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2729,
+      "des_suministro": "SE_Manzanares400(Ampl. Picon) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3022,
+      "des_suministro": "SE_Gramanet 220 kV (modif. topológica)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3052,
+      "des_suministro": "Acometida J-0693-S3955 MT SE Campos ",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 3055,
+      "des_suministro": "SE_ Buenos Aires 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 3258,
+      "des_suministro": "L_Arroyo de la Vega-Fuente Hito 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3126,
+      "des_suministro": "L_ Mangraners-Espluga-Begues 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 3375,
+      "des_suministro": "E_S Olza L_Itxaso-Muruart 400(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3271,
+      "des_suministro": "E_S BegoñaL_Fuencarral_Sanchinaro2-220",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3814,
+      "des_suministro": "SE_Ludrio 400 kV  (Ampl. ADIF)",
+      "d
+DEBUG 2026-09-21 16:00:07,196 [[ree-1.0.0-mule-domain].http.requester.HTTP_Request_configuration.02 SelectorRunner] [processor: enviarQuery:\soapkit-config/processors/1; event: 1-c0360820-b5c4-11f1-b281-005056a3eb53] org.mule.service.http.impl.service.HttpMessageLogger.http.requester.HTTP_Request_configuration: REQUESTER
+es_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3855,
+      "des_suministro": "L_T.Estella-Laguardia 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3882,
+      "des_suministro": "E_S Noguera L_Arenal-Lluc(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4316,
+      "des_suministro": "SERVICIO MANTENIMIENOT EDITRAN",
+      "des_fase_compra": "Solped Enviada"
+    },
+    {
+      "id_plan_compra": 4264,
+      "des_suministro": "L_Adrall-Frontera Andorrana 220 kV",
+      "des_fase_compra": "Licitación: Valoración Cualificación"
+    },
+    {
+      "id_plan_compra": 5238,
+      "des_suministro": "Mobiliario Reforma Sede Corporativa",
+      "des_fase_compra": "Solped enviada"
+    },
+    {
+      "id_plan_compra": 5940,
+      "des_suministro": "SE_CantabriaCen220(Nva+EvRE+APD)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2806,
+      "des_suministro": "SE_La Secuita 400-220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2825,
+      "des_suministro": "L_Can Rigalt 220 kV BEG FACU CJD URG",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2701,
+      "des_suministro": "SE_Ortiguero 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2702,
+      "des_suministro": "SE_Belinchon400(Ampl.Morata3y4)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2722,
+      "des_suministro": "L_Manzanares-Picon 400 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2755,
+      "des_suministro": "SE_Can Rigalt 220 kV (Reub. CLB)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2934,
+      "des_suministro": "L_Begoña-Fuente Hito 220 kV (Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2966,
+      "des_suministro": "L_Mallorca-Menorca 3(C.Sub)(Viabil)",
+      "des_fase_compra": "Solped enviada"
+    },
+    {
+      "id_plan_compra": 3368,
+      "des_suministro": "L_Guadame-Manzanares 400 kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3369,
+      "des_suministro": "E_S Coderas 400kV L_Maga-Peñaf(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3566,
+      "des_suministro": "E_S Las Rosas 220 L_Granad-Calet(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3383,
+      "des_suministro": "E_SCristoRivas220L_Loech-Vallec(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6041,
+      "des_suministro": "L_La Jara- T Ayala 2 220 kV (A.C.)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5592,
+      "des_suministro": "OCLS PenBal 2 y MaMe 3",
+      "des_fase_compra": "Solped enviada"
+    },
+    {
+      "id_plan_compra": 6189,
+      "des_suministro": "SE_Viana 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5277,
+      "des_suministro": "L_Transbadalona 220kV(modif. topológica)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6192,
+      "des_suministro": "Serv. Migración IEC101-104 SAC 26-28",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6209,
+      "des_suministro": "E_S Ichaso L_Castejón-Muruarte 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6221,
+      "des_suministro": "BRIGADA MTTO SSEE TENERIFE Y GRAN CANARIA (4 MESES)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6234,
+      "des_suministro": "Brigadas de apoyo a SSEE en Tenerife y Gran Canaria 2027-2031",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5787,
+      "des_suministro": "SE_Los Barrios 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5821,
+      "des_suministro": "L_Aceca 220 kV(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5844,
+      "des_suministro": "SE_Piélagos 220 kV (Nueva+APD)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 768,
+      "des_suministro": "SE/ Campos 400 kV OC",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 780,
+      "des_suministro": "L/ Buenos Aires-Caletillas 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1678,
+      "des_suministro": "L/ El Rosario-Guajara 66 kV OC",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1721,
+      "des_suministro": "L/ Ayora-Cofrentes 400 kV OC",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1509,
+      "des_suministro": "SE/ San Fernando 400/220 kV OC",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1528,
+      "des_suministro": "SE/ Beariz 400 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2160,
+      "des_suministro": "O.C.  SE/ Castellar de la Frontera 400 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 5970,
+      "des_suministro": "SE_Santos de Maimona 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5981,
+      "des_suministro": "SE_Valdecaballeros 400 kV (E-STATCOM)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6037,
+      "des_suministro": "L_ Sta. Águeda-El Tablero 66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6079,
+      "des_suministro": "SE_Bateas (Nuevo Vigo) 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5275,
+      "des_suministro": "E_S Markonzaga 220 L_Güeñes-ACB(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5278,
+      "des_suministro": "E_S Goro 66 L_Esc-Teld-Cin-Marz(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5312,
+      "des_suministro": "L_Drago-Chío 66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3283,
+      "des_suministro": "L_Baza-ANTAS (Ribina) 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3787,
+      "des_suministro": "SE_Vandellos 400 kV (Ampl. EvRE)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4086,
+      "des_suministro": "E_S Rosas L_Arico2-PoligonoGuimar66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4317,
+      "des_suministro": "SERVICIO MANTENIMIENTO OPFIN",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4267,
+      "des_suministro": "L_Moncasi-María 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4179,
+      "des_suministro": "L_Tías-Playa Blanca 132 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4486,
+      "des_suministro": "SERVICIO INTELIGENCIA ARTIFICIAL (IA)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4746,
+      "des_suministro": "L_Quimico-Tarragona 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4688,
+      "des_suministro": "E_SFuencalientL_Breña-VAridane66(AnexoI)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4689,
+      "des_suministro": "E_SFuencalientL_Breña-VAridane66(AnexoI)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4816,
+      "des_suministro": "L_Lanza.-LGraciosa(Renov.ENLACE)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5227,
+      "des_suministro": "SE_Barrundia 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6211,
+      "des_suministro": "mto sistema gestion IUSE",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6215,
+      "des_suministro": "Stro e inst equipamiento MPLS",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6220,
+      "des_suministro": "SE_Markonzaga 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6232,
+      "des_suministro": "Servicios_voz_nuevo edificio",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5837,
+      "des_suministro": "SE_Sacer 400 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5842,
+      "des_suministro": "SE_Manzana.400(Ampl.Olea1-Baza1)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2921,
+      "des_suministro": "L_La Serna-Magallón 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2936,
+      "des_suministro": "L_San Servan-Guadiana 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2955,
+      "des_suministro": "L_Las Arroyadas-Tordesillas 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2964,
+      "des_suministro": "L_San Martín -EC San Martín 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3364,
+      "des_suministro": "L_Sta Agueda-Arguineguin 66kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3366,
+      "des_suministro": "E_S Las Rosas 66kV L_Cand-Poris(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3600,
+      "des_suministro": "L_ Morella-La Plana 400 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 3377,
+      "des_suministro": "SE_Olza 400 kV (Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3386,
+      "des_suministro": "L_Lomo Apolinario-Sabinal 66kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3886,
+      "des_suministro": "L_Abona-Las Rosas 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3908,
+      "des_suministro": "SERVICIO DE CALIDAD DEL SOFTWARE 2026-2028",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 770,
+      "des_suministro": "E/S O Incio L/ Belesar-La Lomba 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 789,
+      "des_suministro": "L/ Mangraners-Espluga-Begues 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1719,
+      "des_suministro": "L/ Morella-La Plana 400 kV OC",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1816,
+      "des_suministro": "TRATAMIENTO ACEITE MÁQUINAS DE POTENCIA",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 1487,
+      "des_suministro": "EQUIPOS GIS SE ALBATARREC",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1520,
+      "des_suministro": "SE/ Buenos Aires 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1527,
+      "des_suministro": "SE/ Fontefría 400/220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1560,
+      "des_suministro": "L/ Beariz-Fontefría 400 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2121,
+      "des_suministro": "GIS SE/ Chío (Nueva Guía de Isora) y el SE/ El Palmar 66 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2067,
+      "des_suministro": "OC Y MT SE Gran Tarajal 132 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2884,
+      "des_suministro": "L_Drago-CuestadelaVilla-Realejos 66kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2908,
+      "des_suministro": "E_S Farners L_Bescanó-Vic 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2601,
+      "des_suministro": "SE_ Campos 400 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2704,
+      "des_suministro": "SE_Morata 400 kV  (Ampl. Bel) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2713,
+      "des_suministro": "SE_Cotorros 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5755,
+      "des_suministro": "SE_Cártama220 (Ampl.)consumi",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6214,
+      "des_suministro": "Gestión integral como resíduo de máquinas de potencia 2027 (Varios emplazamientos)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6229,
+      "des_suministro": "Contrato Mantenimiento SE Castellón - 2026 ",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5883,
+      "des_suministro": "SE_Almaraz 400 kV (Compensador)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 743,
+      "des_suministro": "E/S Castellar Frontera L/JDN-PIN 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 757,
+      "des_suministro": "L/ Ayora-Cofrentes 400 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 4540,
+      "des_suministro": "L_Las Palmas Oeste 66kV (Camb.Top.)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4559,
+      "des_suministro": "Restauración ambiental entorno SE Caletillas",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 4562,
+      "des_suministro": "SE_Farners 400_220 kV (Nueva SE)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4343,
+      "des_suministro": "SE_Foradada 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4841,
+      "des_suministro": "L_SantaPonsa-PuertodePalma220kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4842,
+      "des_suministro": "L_Poligono-Son Castello 66kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4843,
+      "des_suministro": "E_S Escobar LSabinal-Tirajana220(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4809,
+      "des_suministro": "L_Arkale-Hernani220(Renov.) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5081,
+      "des_suministro": "ACUERDO MARCO AISLADORES DE COMPOSITE DESDE 31/07/2026 HASTA EL 01/08/2029",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5969,
+      "des_suministro": "SE_Drago 66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5982,
+      "des_suministro": "SE_Carmona  400 kV (E-STATCOM)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6056,
+      "des_suministro": "E_S Valdebebas L_ Aena-CN 220 (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6067,
+      "des_suministro": "E_S Bateas (Nuevo Vigo) L_Atios-Pazos220",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5273,
+      "des_suministro": "L_ Ardora-Sabon 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6203,
+      "des_suministro": "E_SQuímico220-La Selva-Constanti(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6207,
+      "des_suministro": "Sistema de monitorización de clima",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5291,
+      "des_suministro": "E_S Málaga L_Polígono-Tajo220kV(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 1858,
+      "des_suministro": "SERVICIO MANTENIMIENTO EVOLUTIVO SUBSISTEMA DLR EN IOT",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 1524,
+      "des_suministro": "SE/ La Plana 400 kV (Ampl.)",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 1588,
+      "des_suministro": "E/S Fontefría L/ Suido-Pazos 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 4768,
+      "des_suministro": "E_S Espinillos L_CISN-CMPT220(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4774,
+      "des_suministro": "E_S Tablas 220 L_Ciud Dep-Fuenc(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5944,
+      "des_suministro": "SOPORTE ESPECIALIZADO INFRAESTRUCTURAS SINGULARES ",
+      "des_fase_compra": "Solped enviada"
+    },
+    {
+      "id_plan_compra": 2870,
+      "des_suministro": "SE_Lithica 132 kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2887,
+      "des_suministro": "SE_Abades 400_220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2904,
+      "des_suministro": "SE_Platea 400 kV (Ampl. REA)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2914,
+      "des_suministro": "L_Belinchon-Morata 400 k
+DEBUG 2026-09-21 16:00:07,196 [[ree-1.0.0-mule-domain].http.requester.HTTP_Request_configuration.02 SelectorRunner] [processor: enviarQuery:\soapkit-config/processors/1; event: 1-c0360820-b5c4-11f1-b281-005056a3eb53] org.mule.service.http.impl.service.HttpMessageLogger.http.requester.HTTP_Request_configuration: REQUESTER
+V (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2659,
+      "des_suministro": "SE_ Beariz 400 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2962,
+      "des_suministro": "E_S Fadrell L_PLA-CTN 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3567,
+      "des_suministro": "L_Villanueva del Rey-Guadame 400(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3464,
+      "des_suministro": "E_S Secuita L_Vandellós-Garraf 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3466,
+      "des_suministro": "L_DC Escatrón-Els Aubals 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3788,
+      "des_suministro": "L_Els Aubals-Secuita 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3831,
+      "des_suministro": "SE_Camarena 400_220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4205,
+      "des_suministro": "E_S Bateas (Nuevo Vigo) L_Atios-Pazos220",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4266,
+      "des_suministro": "L_Moncasi-María 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4561,
+      "des_suministro": "SE_Las Palmas Oeste 66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 1883,
+      "des_suministro": "EE/SS El Sabinal A+I+T",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 5983,
+      "des_suministro": "SE_ Manzanares  400 kV (E-STATCOM)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5992,
+      "des_suministro": "4ª Prórroga del servicio de Telefonía Móvil y Datos",
+      "des_fase_compra": "Licitación: En curso"
+    },
+    {
+      "id_plan_compra": 6015,
+      "des_suministro": "Ampliación Servicio Explotación de Aplicaciones (SEA)",
+      "des_fase_compra": "Licitación: En curso"
+    },
+    {
+      "id_plan_compra": 6175,
+      "des_suministro": "SERVICIO MANTENIMIENTO SAGA / MANINT",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5274,
+      "des_suministro": "E_SAmericasL_L.Olivos-Vallitos66(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5279,
+      "des_suministro": "E_S Fasnia 66 LCand-Por-Ari-Pol(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6190,
+      "des_suministro": "SE_Viana 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6193,
+      "des_suministro": "L_Fadrell - San Martín 220 kV (C.Sub)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6205,
+      "des_suministro": "Salvapájaros UV aspa corta Canarias",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6206,
+      "des_suministro": "Salva pájaros UV aspa larga Guipúzcoa",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6236,
+      "des_suministro": "Servicio de consultoría para la definición de la estrategia y hoja de ruta hacia Redes Autónomas",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5805,
+      "des_suministro": "SE_Reboria 400_220 kV (Nueva) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5825,
+      "des_suministro": "Contratación entomólogo seguimiento caracoles",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5902,
+      "des_suministro": "SE_Americas 66kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 1748,
+      "des_suministro": "MEM Arañuelo 400 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2807,
+      "des_suministro": "SE_La Plana 400 kV  (Ampl. Gaus)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2813,
+      "des_suministro": "SE_Coscurita 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2824,
+      "des_suministro": "L_Interc. Aragón Frontera400(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2872,
+      "des_suministro": "SE_San Martin 132-220 kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2906,
+      "des_suministro": "L_Aena1-Campo d lasNaciones220kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2602,
+      "des_suministro": "SE_ O Incio y San Fernando 220 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2630,
+      "des_suministro": "SE_ Chío (Nueva Guía de Isora) 66 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2727,
+      "des_suministro": "SE_Pierola 400 kV (SSSC)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2741,
+      "des_suministro": "SE_Cisneros 220 kV (Ampl Compl.)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2487,
+      "des_suministro": "Eje Rosario (Rosario-Guajara / Geneto-Rosario / Rosario-Manuel Cruz)",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 3227,
+      "des_suministro": "SE_Arroyo de la Vega 220 kV (Ampl. FH)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5146,
+      "des_suministro": "SE_La Secuita 400-220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5571,
+      "des_suministro": "SE_Arrigorriaga 400 kV (nueva+EvREs)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6042,
+      "des_suministro": "E_S Cinca L_MonzónMequinenza220",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5598,
+      "des_suministro": "Fase 2 Sede",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6055,
+      "des_suministro": "SE_Ali 220 kV   (Adecuación a P.O.)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2944,
+      "des_suministro": "L_DC Escatrón-Els Aubals 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3367,
+      "des_suministro": "E_SL.RosasL_BuenosAires-Poris220(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3571,
+      "des_suministro": "L_Cisneros-Complutum 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3381,
+      "des_suministro": "SE_Seimeira 400 kV (Nueva) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3471,
+      "des_suministro": "E_S Secuita L_PUG-CTT y JUN-PER 220kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3848,
+      "des_suministro": "L_Almazán-Medinaceli 400(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3881,
+      "des_suministro": "SE_Las Rosas 220-66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3909,
+      "des_suministro": "SERVICIO GLOBAL DEL DATO",
+      "des_fase_compra": "Licitación: En curso"
+    },
+    {
+      "id_plan_compra": 3718,
+      "des_suministro": "L_Manchega-Romica 400 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4104,
+      "des_suministro": "E_S Nuevo Cauce L_Torrente-Patraix220KV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4204,
+      "des_suministro": "L_Reboria-Pinzales 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4207,
+      "des_suministro": "E_S Puerto Palma L_Falca-Santa Catalina",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4298,
+      "des_suministro": "Suministro, montaje y servicio de mantenimiento de líneas subterráneas de 66, 132 y 220 kV. Período de vigencia 01/01/2027 - 31/12/2029 (36 meses).",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4276,
+      "des_suministro": "Actuaciones silvícolas Pinares del Cerro y Valdemoro",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 4122,
+      "des_suministro": "E_S Seimeira L_Pesoz-Boimente400(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4403,
+      "des_suministro": "E_S ValdecaL_Almrz-Guadame400(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4412,
+      "des_suministro": "Soterramiento TET D/C 220 kV Moraleja-Buenavista / Fuenlabrada-Moraleja T15-T19 (3º)",
+      "des_fase_compra": "Licitación: Valoración Técnica"
+    },
+    {
+      "id_plan_compra": 4664,
+      "des_suministro": "SERVICIO DE EXPLOTACIÓN DE APLICACIONES + REDES",
+      "des_fase_compra": "Licitación: En curso"
+    },
+    {
+      "id_plan_compra": 4762,
+      "des_suministro": "L_Formentera-S.Jorge 66(Renov.)(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4773,
+      "des_suministro": "L_Begoña-Las Tablas 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4775,
+      "des_suministro": "E_S Ponferrada L_Lomba-Triv 220(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4794,
+      "des_suministro": "SE_Fuencaliente 66 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4690,
+      "des_suministro": "E_SFuencalientL_Breña-VAridane66(AnexoI)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4959,
+      "des_suministro": "SERV. MANTENIMIENTO APPLS. DE RED 2024-2027",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4920,
+      "des_suministro": "SERVICIO DE TRATAMIENTO GESTIÓN DOCUMENTACIÓN INSTALACIONES",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4811,
+      "des_suministro": "L_LaGrela-FerroatlaSab220(Renov)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2532,
+      "des_suministro": "Conven.Univ.Valencia 2 parejas águilas perdiceras",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2628,
+      "des_suministro": "SE_ Gran Tarajal 132 kV",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2664,
+      "des_suministro": "SE_ Almendrales 400 kV (Nueva SE y EvRe)",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2705,
+      "des_suministro": "SE_Aldaia 220 kV (Ampl. ApD) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2754,
+      "des_suministro": "SE_Guadame 400 (Ampl ONA VNV)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2917,
+      "des_suministro": "L_Manchega-Belinchón 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2918,
+      "des_suministro": "E_S Camarena 220 L.Torrijos-Villaverde",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2928,
+      "des_suministro": "Desfasador Godelleta 400kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2947,
+      "des_suministro": "E_S Secuita L_PUG-CTT y JUN-PER 220kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2950,
+      "des_suministro": "E_S Ichaso L_Castejón-Muruarte 400 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2965,
+      "des_suministro": "E_S LithicaL_Ciudadela-MDL 132kV(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3370,
+      "des_suministro": "E_S Coderas 400 L_Serna-Magallon(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3371,
+      "des_suministro": "L_EjeadelosCaba-AragonRegio400(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3462,
+      "des_suministro": "SE_Huelves 220kV (Adec. PO)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3915,
+      "des_suministro": "Servicios de apoyo a la gestión de la Base de Datos de las Instalaciones (BDI). ",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5271,
+      "des_suministro": "SE_Nuevo Cauce 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5276,
+      "des_suministro": "E_S Markonzaga220 L_Ortuella-ACB(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6200,
+      "des_suministro": "SE_Comarcas 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5292,
+      "des_suministro": "L_ C.Colon-Onuba 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6222,
+      "des_suministro": "SISTEMA DE MONITORIZACIÓN Y PMUs",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6226,
+      "des_suministro": "servicio de soporte especializado, mantenimiento evolutivo y desarrollo de nuevas funcionalidades de las aplicaciones corporativas de gestión de la vegetación.",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6228,
+      "des_suministro": "Servicio de apoyo a Soporte de la Operación: Oficina técnica",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6233,
+      "des_suministro": "AMPLIACIÓN ACUERDO MARCO PARA CONSTRUCCIÓN DE LÍNEAS Y BRIGADAS DE MNTO 2023-2026",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5806,
+      "des_suministro": "SE_Asturiana 400 kV (Nueva) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5903,
+      "des_suministro": "SE_Fasnia 66kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5907,
+      "des_suministro": "SE_Peñalba 400-220 kV (Ampl.)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 1526,
+      "des_suministro": "Desmantelamiento Soto-Trasona",
+      "des_fase_compra": "Análisis ofertas económicas"
+    },
+    {
+      "id_plan_compra": 2122,
+      "des_suministro": "GIS SE/ Jordana 220 kV (Ampl. EvRE)",
+      "des_fase_compra": "Aprobada"
+    },
+    {
+      "id_plan_compra": 2794,
+      "des_suministro": "SE_Campo Maior 400kV(antigua Río Caya)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 2843,
+      "des_suministro": "SE_Drago 66 kV (Compensadores)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3867,
+      "des_suministro": "L_C. Romeral-Cañada Barca132 K(Viabil_)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3885,
+      "des_suministro": "L_Abona-Las Rosas 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 3935,
+      "des_suministro": "SERVICIO MANTENIMIENTO SCECI, RFEs y OASYS 2026-2028 ",
+      "des_fase_compra": "Licitación: En curso"
+    },
+    {
+      "id_plan_compra": 5270,
+      "des_suministro": "SE_La Sagra 400_220 (Ampl.) AT2 (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6202,
+      "des_suministro": "SE_Pinzales 220 kV (Nueva) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6204,
+      "des_suministro": "SE_Puerto de Gijon 220 kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5289,
+      "des_suministro": "L_Torrellano-Santa Pola 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6213,
+      "des_suministro": "Gest.integ.como resíduo de máquinas de potencia Pinar y Aldedavila",
+      "des_fase_compra": "Solped enviada"
+    },
+    {
+      "id_plan_compra": 6230,
+      "des_suministro": "Servicio de Ingeniería para los Proyectos de Acometidas",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6231,
+      "des_suministro": "Stro dispositivos conmutacion ethernet",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6235,
+      "des_suministro": "•\tSE El Palo 400 kV. Cubrición HIS-GIS. Trabajos de obra civil",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4296,
+      "des_suministro": "Acuerdo marco para trabajos de obra civil en subestaciones eléctricas. ",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4548,
+      "des_suministro": "L_Farners-Riudarenes 220 kV",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4641,
+      "des_suministro": "ACUERDO MARCO CAJAS Y CUADROS",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4646,
+      "des_suministro": "RENOVACIÓN SOPORTE SISTEMAS DE GESTION IPTNMS Y SOPORTE SW SDH 2024-2027",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4810,
+      "des_suministro": "L_Eliana-QuartPoblet220(Renov.) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 4813,
+      "des_suministro": "L_Mirasierra-VentasBa220(Renov.)(Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5941,
+      "des_suministro": "SE_Malmasin 220 kV (Nueva+APD) (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 5542,
+      "des_suministro": "SE_Piedad(Antes Machorra) 400kV (Viabil)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6021,
+      "des_suministro": "L_Matorral-Lomo Maspal. 66 kV (C. Cable)",
+      "des_fase_compra": null
+    },
+    {
+      "id_plan_compra": 6039,
+      "des_suministro": "Servicio de Apoyo Singulares",
+      "des_fase_compra": "Licitación: En curso"
+    },
+    {
+      "id_plan_compra": 6044,
+      "des_suministro": "Sergicio de apoyo a la gestión de información geoespacial",
+      "des_fase_compra": null
+    }
+  ]
+}
+INFO  2026-09-21 16:00:07,205 [[MuleRuntime].uber.22657: [edl-soap].api-main.BLOCKING @682c47bc] [processor: api-main/processors/5; event: 1-c0360820-b5c4-11f1-b281-005056a3eb53] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns0:EnviarQueryResponse xmlns:ns0="https://api-aplicaciones.ree.es/api/v1/edl-soap">
+  <registrosTotales>358</registrosTotales>
+  <ultimoRegistro>358</ultimoRegistro>
+  <results>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4291</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Minglanilla 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4169</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Las Breñas 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4547</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Farners-Riudarenes 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4563</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Farners 400_220 kV (Nueva SE)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4565</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Magallón 400_220 kV (Ampl. trafo)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4567</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>trabajos de reacondicionamiento externo a SIEMENS </valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>En Aprobación</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4446</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Villarrasa 400 kV (Nueva)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4761</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Coliseo-Molines 66kV(Renov.)(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4793</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>OC SE TIAS 66 kV (Proyecto VisynC)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: Valoración Cualificación</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4617</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO MANTENIMIENTO SISTEMAS DE GESTIÓN EQUIPOS TRANSMISIÓN INSULARES</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5213</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SSebadalL_Buenavista-Muelle66(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5474</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Freson 400kV (Nueva)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5980</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Mudarra  400 kV (E-STATCOM)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6007</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Servicio Mantenimiento DALIA</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5578</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>MODELO PRODUCTO ATLAS</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6185</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>PROYECTO MÓDULO DE TRAMITACIONES, PERMISOS Y MM.AA. </valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5286</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Saleres-Illora 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5287</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Ventilla (Mijas Norte) 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6210</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>mto sistema gestion SSFO</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6216</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Ampliación Adecuación Sogepima</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6217</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Ampliación y prorroga de centrales de seguridad</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6224</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE Carroyuelas-Bastidor calidad de onda</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6227</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SECCIONADORES 220 TORDESILLAS</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5901</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Puerto de la Luz 66 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1690</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>EM SE/ San Fernando 400/220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1548</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E/S Beariz L/ Mesón-Cartelle 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1579</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE/ Almendrales 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2098</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Adecuación vegetal  SE Caletillas 220kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1924</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE/ Platea 400 kV MEM</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2894</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Gatica 400-220 kV (Ampl. AT2)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2911</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Morella-La Plana 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Solped enviada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2564</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>MARINE SURVEY  MAME3</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2657</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ Fontefría 400-220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2660</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ Castellar Frontera 400(Adif JDN PIN)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2933</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Guadiana-Campo Maior 400 kV (Rio Caya)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2945</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Els Aubals-Secuita 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2946</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Secuita L_Vandellós-Garraf 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2963</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Platea-Requena 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3569</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Coderas 400 kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3376</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Olza 400 kV (Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3398</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_ Mangraners-Espluga-Begues 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4208</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SVerneda L_Sagrera-Badalona220(AnexoI)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3827</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>ESP ESTUDIO METOCEANICO E HIDROSED. MAMEN3</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4085</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Las Rosas-Caletillas 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4193</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Mogan 66kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4216</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Servicio de apoyo a las instalaciones de telecomunicaciones.</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>767</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E/S Campos - L/ El Palmar-Rocamora 400 k Oc+A+I+T</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2030</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>A.TEC. Y REPRES. A BORDO DE EST.MARINOS</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2800</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Xove 400 kV (Ampl. Offshore)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2816</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Vall D'uxo 220 kV (Ampl.ApD) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2864</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Fadrell 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2910</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Morella-La Plana 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2725</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Talavera 220 kV (Ampl.Apd)(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2731</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Picon 400 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2937</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_ Magaña-Coscurita 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2939</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Otero - Abades 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2952</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Baja T Udalla 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3374</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Aragon Region 400 (Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3450</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Acometida MT SE Beariz 400</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3459</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Bélgida (Benilloba) 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4258</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Moncasi 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4119</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Camarena 400 L_ArañueloMorata</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4482</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_C.Romeral-BcoTirajanaIII 220(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>771</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE/ O Incio 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1665</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE/ Formentera 132 kV MEM</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4757</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Arguineguín-Sta Águeda-Mogán 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4769</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Algete-Ardoz 220 kV (Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4615</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO MANTENIMIENTO WORLDLEX</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4844</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Matorral L_Matorral 66 Kv (Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4970</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SGV MANTENIMIENTO</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4812</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Ingenio-LaPlana220(Renov.) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4814</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Candelaria-Poligono66(Renov.)(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5093</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SCalaBouL_Sn Ant.-Sn.Jorge66(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5155</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Yélamos (antes Budia) 400kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5475</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Parrales 400 kV (Nueva)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5537</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Servicio Telefonía Móvil y Datos</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6020</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Adrall-Frontera Andorrana 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6060</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Mantenimiento de sistemas de elevación</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5635</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Auditoría Calidad del Servicio Ejercicios 2025-2029</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5272</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Abegondo-Eiris 220 kV (Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5288</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Elda L_Benejama-Petrel 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6208</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>TRANSFORMADORES MT/BT ACEITE 250KVA</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5290</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Guadame 400 (Ampl. Vill Man)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6212</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Asistencia Técnica Fabricante (Ingeniería)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6218</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>REPUESTOS DE SECCIONADORES DE MESA</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6219</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>EsIA + Campaña Ambiental Marina para el proyecto de Renovación del cable submarino Lanzarote – La Graciosa</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6223</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>San Seb de los Reyes - Megaphasor</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6225</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Conjunto Rectif+bateria 60A</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5820</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Drago 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5867</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERV.LEVANTAMIENTO PROCESOS</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En Curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5884</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Litoral 400 kV (Compensador)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5898</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Los Berrocales 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>909</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO DE CIBERSEGURIDAD</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4382</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>OTROS MATERIALES PARA SECCIONADORES</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Análisis ofertas económicas</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4492</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Talas Beariz-Fontefría</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4752</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Apoyo Técnico SGA y EGA</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Análisis ofertas económicas</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4760</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_S.Catalina-Valldurgen(Renov.)(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4763</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_S.J.BalearesMolines66(Renov.)(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4767</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SPuertoGijon220L_CarrioUninsa(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4771</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Cerros-Estrella-Villaverde(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4772</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SValdecarros-Coslad-Villaverd(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4723</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Drago-Icod 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4610</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>INTEGRACION GENERAL EQUIPOS TELECOM. 2024-2027</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4845</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S TajuyaLValleAridane-Breñas66(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2808</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Els Aubals 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2823</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Inter.Navarra-Frontera 400 k(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2853</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ Chío (Nueva Guía de Isora) 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2909</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Gramanet 220 kV (modif. topológica)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2677</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Adrall-Frontera Andorrana 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2729</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Manzanares400(Ampl. Picon) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3022</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Gramanet 220 kV (modif. topológica)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3052</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Acometida J-0693-S3955 MT SE Campos </valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3055</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ Buenos Aires 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3258</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Arroyo de la Vega-Fuente Hito 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3126</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_ Mangraners-Espluga-Begues 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3375</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Olza L_Itxaso-Muruart 400(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3271</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S BegoñaL_Fuencarral_Sanchinaro2-220</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3814</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Ludrio 400 kV  (Ampl. ADIF)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3855</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_T.Estella-Laguardia 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3882</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Noguera L_Arenal-Lluc(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4316</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO MANTENIMIENOT EDITRAN</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Solped Enviada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4264</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Adrall-Frontera Andorrana 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: Valoración Cualificación</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5238</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Mobiliario Reforma Sede Corporativa</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Solped enviada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5940</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_CantabriaCen220(Nva+EvRE+APD)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2806</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_La Secuita 400-220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2825</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Can Rigalt 220 kV BEG FACU CJD URG</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2701</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Ortiguero 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2702</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Belinchon400(Ampl.Morata3y4)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2722</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Manzanares-Picon 400 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2755</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Can Rigalt 220 kV (Reub. CLB)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2934</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Begoña-Fuente Hito 220 kV (Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2966</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Mallorca-Menorca 3(C.Sub)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Solped enviada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3368</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Guadame-Manzanares 400 kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3369</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Coderas 400kV L_Maga-Peñaf(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3566</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Las Rosas 220 L_Granad-Calet(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3383</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SCristoRivas220L_Loech-Vallec(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6041</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_La Jara- T Ayala 2 220 kV (A.C.)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5592</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>OCLS PenBal 2 y MaMe 3</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Solped enviada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6189</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Viana 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5277</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Transbadalona 220kV(modif. topológica)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6192</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Serv. Migración IEC101-104 SAC 26-28</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6209</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Ichaso L_Castejón-Muruarte 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6221</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>BRIGADA MTTO SSEE TENERIFE Y GRAN CANARIA (4 MESES)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6234</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Brigadas de apoyo a SSEE en Tenerife y Gran Canaria 2027-2031</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5787</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Los Barrios 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5821</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Aceca 220 kV(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5844</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Piélagos 220 kV (Nueva+APD)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>768</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE/ Campos 400 kV OC</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>780</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L/ Buenos Aires-Caletillas 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1678</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L/ El Rosario-Guajara 66 kV OC</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1721</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L/ Ayora-Cofrentes 400 kV OC</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1509</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE/ San Fernando 400/220 kV OC</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1528</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE/ Beariz 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2160</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>O.C.  SE/ Castellar de la Frontera 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5970</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Santos de Maimona 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5981</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Valdecaballeros 400 kV (E-STATCOM)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6037</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_ Sta. Águeda-El Tablero 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6079</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Bateas (Nuevo Vigo) 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5275</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Markonzaga 220 L_Güeñes-ACB(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5278</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Goro 66 L_Esc-Teld-Cin-Marz(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5312</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Drago-Chío 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3283</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Baza-ANTAS (Ribina) 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3787</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Vandellos 400 kV (Ampl. EvRE)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4086</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Rosas L_Arico2-PoligonoGuimar66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4317</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO MANTENIMIENTO OPFIN</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4267</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Moncasi-María 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4179</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Tías-Playa Blanca 132 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4486</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO INTELIGENCIA ARTIFICIAL (IA)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4746</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Quimico-Tarragona 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4688</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SFuencalientL_Breña-VAridane66(AnexoI)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4689</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SFuencalientL_Breña-VAridane66(AnexoI)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4816</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Lanza.-LGraciosa(Renov.ENLACE)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5227</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Barrundia 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6211</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>mto sistema gestion IUSE</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6215</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Stro e inst equipamiento MPLS</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6220</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Markonzaga 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6232</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Servicios_voz_nuevo edificio</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5837</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Sacer 400 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5842</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Manzana.400(Ampl.Olea1-Baza1)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2921</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_La Serna-Magallón 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2936</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_San Servan-Guadiana 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2955</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Las Arroyadas-Tordesillas 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2964</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_San Martín -EC San Martín 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3364</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Sta Agueda-Arguineguin 66kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3366</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Las Rosas 66kV L_Cand-Poris(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3600</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_ Morella-La Plana 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3377</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Olza 400 kV (Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3386</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Lomo Apolinario-Sabinal 66kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3886</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Abona-Las Rosas 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3908</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO DE CALIDAD DEL SOFTWARE 2026-2028</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>770</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E/S O Incio L/ Belesar-La Lomba 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>789</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L/ Mangraners-Espluga-Begues 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1719</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L/ Morella-La Plana 400 kV OC</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1816</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>TRATAMIENTO ACEITE MÁQUINAS DE POTENCIA</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1487</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>EQUIPOS GIS SE ALBATARREC</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1520</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE/ Buenos Aires 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1527</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE/ Fontefría 400/220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1560</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L/ Beariz-Fontefría 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2121</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>GIS SE/ Chío (Nueva Guía de Isora) y el SE/ El Palmar 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2067</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>OC Y MT SE Gran Tarajal 132 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2884</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Drago-CuestadelaVilla-Realejos 66kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2908</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Farners L_Bescanó-Vic 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2601</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ Campos 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2704</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Morata 400 kV  (Ampl. Bel) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2713</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Cotorros 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5755</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Cártama220 (Ampl.)consumi</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6214</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Gestión integral como resíduo de máquinas de potencia 2027 (Varios emplazamientos)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6229</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Contrato Mantenimiento SE Castellón - 2026 </valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5883</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Almaraz 400 kV (Compensador)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>743</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E/S Castellar Frontera L/JDN-PIN 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>757</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L/ Ayora-Cofrentes 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4540</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Las Palmas Oeste 66kV (Camb.Top.)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4559</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Restauración ambiental entorno SE Caletillas</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4562</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Farners 400_220 kV (Nueva SE)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4343</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Foradada 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4841</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_SantaPonsa-PuertodePalma220kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4842</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Poligono-Son Castello 66kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4843</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Escobar LSabinal-Tirajana220(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4809</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Arkale-Hernani220(Renov.) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5081</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>ACUERDO MARCO AISLADORES DE COMPOSITE DESDE 31/07/2026 HASTA EL 01/08/2029</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5969</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Drago 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5982</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Carmona  400 kV (E-STATCOM)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6056</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Valdebebas L_ Aena-CN 220 (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6067</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Bateas (Nuevo Vigo) L_Atios-Pazos220</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5273</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_ Ardora-Sabon 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6203</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SQuímico220-La Selva-Constanti(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6207</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Sistema de monitorización de clima</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5291</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Málaga L_Polígono-Tajo220kV(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1858</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO MANTENIMIENTO EVOLUTIVO SUBSISTEMA DLR EN IOT</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1524</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE/ La Plana 400 kV (Ampl.)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1588</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E/S Fontefría L/ Suido-Pazos 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4768</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Espinillos L_CISN-CMPT220(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4774</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Tablas 220 L_Ciud Dep-Fuenc(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5944</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SOPORTE ESPECIALIZADO INFRAESTRUCTURAS SINGULARES </valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Solped enviada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2870</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Lithica 132 kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2887</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Abades 400_220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2904</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Platea 400 kV (Ampl. REA)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2914</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Belinchon-Morata 400 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2659</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ Beariz 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2962</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Fadrell L_PLA-CTN 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3567</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Villanueva del Rey-Guadame 400(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3464</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Secuita L_Vandellós-Garraf 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3466</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_DC Escatrón-Els Aubals 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3788</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Els Aubals-Secuita 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3831</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Camarena 400_220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4205</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Bateas (Nuevo Vigo) L_Atios-Pazos220</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4266</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Moncasi-María 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4561</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Las Palmas Oeste 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1883</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>EE/SS El Sabinal A+I+T</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5983</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ Manzanares  400 kV (E-STATCOM)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5992</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>4ª Prórroga del servicio de Telefonía Móvil y Datos</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6015</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Ampliación Servicio Explotación de Aplicaciones (SEA)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6175</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO MANTENIMIENTO SAGA / MANINT</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5274</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SAmericasL_L.Olivos-Vallitos66(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5279</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Fasnia 66 LCand-Por-Ari-Pol(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6190</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Viana 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6193</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Fadrell - San Martín 220 kV (C.Sub)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6205</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Salvapájaros UV aspa corta Canarias</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6206</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Salva pájaros UV aspa larga Guipúzcoa</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6236</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Servicio de consultoría para la definición de la estrategia y hoja de ruta hacia Redes Autónomas</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5805</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Reboria 400_220 kV (Nueva) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5825</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Contratación entomólogo seguimiento caracoles</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5902</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Americas 66kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1748</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>MEM Arañuelo 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2807</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_La Plana 400 kV  (Ampl. Gaus)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2813</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Coscurita 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2824</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Interc. Aragón Frontera400(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2872</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_San Martin 132-220 kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2906</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Aena1-Campo d lasNaciones220kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2602</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ O Incio y San Fernando 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2630</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ Chío (Nueva Guía de Isora) 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2727</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Pierola 400 kV (SSSC)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2741</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Cisneros 220 kV (Ampl Compl.)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2487</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Eje Rosario (Rosario-Guajara / Geneto-Rosario / Rosario-Manuel Cruz)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3227</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Arroyo de la Vega 220 kV (Ampl. FH)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5146</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_La Secuita 400-220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5571</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Arrigorriaga 400 kV (nueva+EvREs)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6042</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Cinca L_MonzónMequinenza220</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5598</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Fase 2 Sede</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6055</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Ali 220 kV   (Adecuación a P.O.)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2944</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_DC Escatrón-Els Aubals 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3367</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SL.RosasL_BuenosAires-Poris220(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3571</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Cisneros-Complutum 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3381</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Seimeira 400 kV (Nueva) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3471</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Secuita L_PUG-CTT y JUN-PER 220kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3848</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Almazán-Medinaceli 400(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3881</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Las Rosas 220-66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3909</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO GLOBAL DEL DATO</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3718</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Manchega-Romica 400 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4104</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Nuevo Cauce L_Torrente-Patraix220KV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4204</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Reboria-Pinzales 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4207</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Puerto Palma L_Falca-Santa Catalina</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4298</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Suministro, montaje y servicio de mantenimiento de líneas subterráneas de 66, 132 y 220 kV. Período de vigencia 01/01/2027 - 31/12/2029 (36 meses).</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4276</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Actuaciones silvícolas Pinares del Cerro y Valdemoro</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4122</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Seimeira L_Pesoz-Boimente400(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4403</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S ValdecaL_Almrz-Guadame400(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4412</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Soterramiento TET D/C 220 kV Moraleja-Buenavista / Fuenlabrada-Moraleja T15-T19 (3º)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: Valoración Técnica</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4664</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO DE EXPLOTACIÓN DE APLICACIONES + REDES</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4762</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Formentera-S.Jorge 66(Renov.)(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4773</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Begoña-Las Tablas 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4775</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Ponferrada L_Lomba-Triv 220(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4794</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Fuencaliente 66 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4690</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_SFuencalientL_Breña-VAridane66(AnexoI)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4959</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERV. MANTENIMIENTO APPLS. DE RED 2024-2027</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4920</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO DE TRATAMIENTO GESTIÓN DOCUMENTACIÓN INSTALACIONES</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4811</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_LaGrela-FerroatlaSab220(Renov)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2532</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Conven.Univ.Valencia 2 parejas águilas perdiceras</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2628</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ Gran Tarajal 132 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2664</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_ Almendrales 400 kV (Nueva SE y EvRe)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2705</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Aldaia 220 kV (Ampl. ApD) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2754</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Guadame 400 (Ampl ONA VNV)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2917</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Manchega-Belinchón 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2918</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Camarena 220 L.Torrijos-Villaverde</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2928</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Desfasador Godelleta 400kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2947</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Secuita L_PUG-CTT y JUN-PER 220kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2950</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Ichaso L_Castejón-Muruarte 400 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2965</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S LithicaL_Ciudadela-MDL 132kV(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3370</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Coderas 400 L_Serna-Magallon(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3371</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_EjeadelosCaba-AragonRegio400(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3462</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Huelves 220kV (Adec. PO)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3915</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Servicios de apoyo a la gestión de la Base de Datos de las Instalaciones (BDI). </valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5271</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Nuevo Cauce 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5276</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>E_S Markonzaga220 L_Ortuella-ACB(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6200</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Comarcas 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5292</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_ C.Colon-Onuba 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6222</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SISTEMA DE MONITORIZACIÓN Y PMUs</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6226</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>servicio de soporte especializado, mantenimiento evolutivo y desarrollo de nuevas funcionalidades de las aplicaciones corporativas de gestión de la vegetación.</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6228</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Servicio de apoyo a Soporte de la Operación: Oficina técnica</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6233</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>AMPLIACIÓN ACUERDO MARCO PARA CONSTRUCCIÓN DE LÍNEAS Y BRIGADAS DE MNTO 2023-2026</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5806</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Asturiana 400 kV (Nueva) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5903</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Fasnia 66kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5907</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Peñalba 400-220 kV (Ampl.)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>1526</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Desmantelamiento Soto-Trasona</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Análisis ofertas económicas</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2122</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>GIS SE/ Jordana 220 kV (Ampl. EvRE)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Aprobada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2794</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Campo Maior 400kV(antigua Río Caya)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>2843</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Drago 66 kV (Compensadores)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3867</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_C. Romeral-Cañada Barca132 K(Viabil_)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3885</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Abona-Las Rosas 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>3935</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SERVICIO MANTENIMIENTO SCECI, RFEs y OASYS 2026-2028 </valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5270</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_La Sagra 400_220 (Ampl.) AT2 (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6202</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Pinzales 220 kV (Nueva) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6204</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Puerto de Gijon 220 kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5289</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Torrellano-Santa Pola 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6213</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Gest.integ.como resíduo de máquinas de potencia Pinar y Aldedavila</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Solped enviada</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6230</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Servicio de Ingeniería para los Proyectos de Acometidas</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6231</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Stro dispositivos conmutacion ethernet</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6235</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>•	SE El Palo 400 kV. Cubrición HIS-GIS. Trabajos de obra civil</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4296</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Acuerdo marco para trabajos de obra civil en subestaciones eléctricas. </valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4548</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Farners-Riudarenes 220 kV</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4641</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>ACUERDO MARCO CAJAS Y CUADROS</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4646</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>RENOVACIÓN SOPORTE SISTEMAS DE GESTION IPTNMS Y SOPORTE SW SDH 2024-2027</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4810</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Eliana-QuartPoblet220(Renov.) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>4813</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Mirasierra-VentasBa220(Renov.)(Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5941</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Malmasin 220 kV (Nueva+APD) (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>5542</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>SE_Piedad(Antes Machorra) 400kV (Viabil)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6021</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>L_Matorral-Lomo Maspal. 66 kV (C. Cable)</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6039</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Servicio de Apoyo Singulares</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor>Licitación: En curso</valor>
+      </item>
+    </result>
+    <result>
+      <item>
+        <clave>id_plan_compra</clave>
+        <valor>6044</valor>
+      </item>
+      <item>
+        <clave>des_suministro</clave>
+        <valor>Sergicio de apoyo a la gestión de información geoespacial</valor>
+      </item>
+      <item>
+        <clave>des_fase_compra</clave>
+        <valor/>
+      </item>
+    </result>
+  </results>
+</ns0:EnviarQueryResponse></soap:Body></soap:Envelope>
+INFO  2026-09-21 16:00:07,205 [[MuleRuntime].uber.22657: [edl-soap].api-main.BLOCKING @682c47bc] [processor: api-main/processors/6; event: 1-c0360820-b5c4-11f1-b281-005056a3eb53] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: Fin
+",
+  "limit": 100,
+  "only_pattern_analysis": false
+}

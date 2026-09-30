@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: log-analyzer-agent
+    runtime: python
+    plan: starter
+    rootDir: log-analyzer-agent
+    buildCommand: pip install -r requeriments.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --timeout 120 api_optimized:app
+    healthCheckPath: /api/health
+    envVars:
+      - key: OLLAMA_API_URL
+        value: https://api.ollama.com
+      - key: OLLAMA_API_KEY
+        sync: false
+      - key: OLLAMA_MODEL
+        value: llama3.2:1b:cloud
+      - key: OLLAMA_TIMEOUT
+        value: "90"
+      - key: ENABLE_STREAMING
+        value: "true"
+      - key: SERVICENOW_CREATE_INCIDENTS
+        value: "false"
+      - key: LOG_LEVEL
+        value: INFO
+      - key: PYTHONUNBUFFERED
+        value: "1"

@@ -1,0 +1,381 @@
+{
+  "logs": [
+    {
+      "timestamp": "2026-09-01T08:15:23.451+0200",
+      "level": "INFO",
+      "id": 701,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca301",
+      "message": "Resume context variable zero config: appUser: admin, countryCode: eur, service name: payment-api-v2.json, version: 2.1, proxy host : 443, proxy port : 443, internalSandbox: prod, externalSandbox: secure"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:24.123+0200",
+      "level": "INFO",
+      "id": 702,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca302",
+      "message": "TCP RemoteAddress: 192.168.1.45"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:24.567+0200",
+      "level": "INFO",
+      "id": 703,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca303",
+      "message": "Request initiated: POST /api/v2/payments with transaction ID: TX-2026090101"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:25.234+0200",
+      "level": "INFO",
+      "id": 704,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca304",
+      "message": "Authorization header validated successfully. Token expiry: 2026-09-02T08:15:25Z"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:25.890+0200",
+      "level": "INFO",
+      "id": 705,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca305",
+      "message": "Database connection pool initialized: 50 connections available"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:26.345+0200",
+      "level": "WARNING",
+      "id": 706,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-3",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca306",
+      "message": "Slow query detected: SELECT operation took 2500ms, threshold is 2000ms"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:26.901+0200",
+      "level": "INFO",
+      "id": 707,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca307",
+      "message": "Payment processing started for merchant: MER-12345"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:27.456+0200",
+      "level": "INFO",
+      "id": 708,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca308",
+      "message": "Calling external service: PaymentProcessor at 10.0.0.50:8080"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:28.123+0200",
+      "level": "WARNING",
+      "id": 709,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-4",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca309",
+      "message": "External service response delayed: response time 3200ms for PaymentProcessor"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:28.789+0200",
+      "level": "INFO",
+      "id": 710,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca310",
+      "message": "Payment validation completed: Amount=250.00 EUR, Status=PENDING"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:29.345+0200",
+      "level": "ERROR",
+      "id": 711,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-5",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca311",
+      "message": "Exception occurred during payment processing: Connection timeout to PaymentProcessor after 5000ms"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:29.901+0200",
+      "level": "WARNING",
+      "id": 712,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-4",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca312",
+      "message": "Retry attempt 1/3 initiated for transaction TX-2026090101"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:30.456+0200",
+      "level": "INFO",
+      "id": 713,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca313",
+      "message": "Fallback mechanism activated: Using secondary payment processor"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:31.123+0200",
+      "level": "INFO",
+      "id": 714,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca314",
+      "message": "Secondary payment processor response received: Status=SUCCESS, Reference=PAY-987654"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:31.789+0200",
+      "level": "INFO",
+      "id": 715,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca315",
+      "message": "Payment confirmation stored in database with ID: DB-2026090101-1"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:32.345+0200",
+      "level": "INFO",
+      "id": 716,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca316",
+      "message": "Response sent to client: HTTP 200 OK, Transaction ID: TX-2026090101"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:32.901+0200",
+      "level": "INFO",
+      "id": 717,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca317",
+      "message": "Audit log entry created: action=PAYMENT_PROCESSED, user=admin, timestamp=2026-09-01T08:15:32Z"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:33.456+0200",
+      "level": "WARNING",
+      "id": 718,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-3",
+      "serviceName": "PaymentGateway",
+      "serviceUUID": "0000019d4e3cf386-5ca318",
+      "message": "Memory usage at 85%: 6.8GB of 8GB allocated"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:34.123+0200",
+      "level": "INFO",
+      "id": 719,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "DataService",
+      "serviceUUID": "0000019d4e3cf386-5ca401",
+      "message": "New request received: GET /api/v1/customers/12345"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:34.789+0200",
+      "level": "INFO",
+      "id": 720,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "DataService",
+      "serviceUUID": "0000019d4e3cf386-5ca402",
+      "message": "Cache hit for customer ID: 12345, data retrieved in 45ms"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:35.345+0200",
+      "level": "INFO",
+      "id": 721,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "DataService",
+      "serviceUUID": "0000019d4e3cf386-5ca403",
+      "message": "Response prepared: 1 record found, size: 2.3KB"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:35.901+0200",
+      "level": "ERROR",
+      "id": 722,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-5",
+      "serviceName": "AuthService",
+      "serviceUUID": "0000019d4e3cf386-5ca501",
+      "message": "Token validation failed: Invalid signature detected for token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+    },
+    {
+      "timestamp": "2026-09-01T08:15:36.456+0200",
+      "level": "WARNING",
+      "id": 723,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-4",
+      "serviceName": "AuthService",
+      "serviceUUID": "0000019d4e3cf386-5ca502",
+      "message": "Suspicious activity detected: Multiple failed authentication attempts from IP 203.0.113.22 in last 60 seconds"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:37.123+0200",
+      "level": "INFO",
+      "id": 724,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "AuthService",
+      "serviceUUID": "0000019d4e3cf386-5ca503",
+      "message": "IP 203.0.113.22 has been temporarily blocked for 15 minutes"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:37.789+0200",
+      "level": "INFO",
+      "id": 725,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "NotificationService",
+      "serviceUUID": "0000019d4e3cf386-5ca601",
+      "message": "Email notification queued: Type=ORDER_CONFIRMATION, Recipient=user@example.com"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:38.345+0200",
+      "level": "INFO",
+      "id": 726,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "NotificationService",
+      "serviceUUID": "0000019d4e3cf386-5ca602",
+      "message": "SMS notification queued: Recipient=+34612345678, Message=Your order #ORD-98765 is being processed"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:38.901+0200",
+      "level": "WARNING",
+      "id": 727,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-3",
+      "serviceName": "NotificationService",
+      "serviceUUID": "0000019d4e3cf386-5ca603",
+      "message": "Email queue size exceeds threshold: 1250 items, capacity is 1000. Processing rate: 15/sec"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:39.456+0200",
+      "level": "INFO",
+      "id": 728,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "AnalyticsService",
+      "serviceUUID": "0000019d4e3cf386-5ca701",
+      "message": "Analytics event recorded: event_type=USER_LOGIN, user_id=USER-67890, session_id=SESS-11111"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:40.123+0200",
+      "level": "INFO",
+      "id": 729,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "AnalyticsService",
+      "serviceUUID": "0000019d4e3cf386-5ca702",
+      "message": "Data aggregation job started for period: 2026-09-01T00:00:00Z to 2026-09-01T08:00:00Z"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:40.789+0200",
+      "level": "ERROR",
+      "id": 730,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-5",
+      "serviceName": "AnalyticsService",
+      "serviceUUID": "0000019d4e3cf386-5ca703",
+      "message": "Failed to connect to data warehouse: Connection refused at 192.168.10.100:5432"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:41.345+0200",
+      "level": "WARNING",
+      "id": 731,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-4",
+      "serviceName": "AnalyticsService",
+      "serviceUUID": "0000019d4e3cf386-5ca704",
+      "message": "Using fallback analytics database: Connection established to 192.168.10.101:5432"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:41.901+0200",
+      "level": "INFO",
+      "id": 732,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "AnalyticsService",
+      "serviceUUID": "0000019d4e3cf386-5ca705",
+      "message": "Data aggregation job resumed and completed in 3500ms, processed 45000 events"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:42.456+0200",
+      "level": "INFO",
+      "id": 733,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "ReportingService",
+      "serviceUUID": "0000019d4e3cf386-5ca801",
+      "message": "Report generation initiated: Type=DAILY_SUMMARY, Format=PDF"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:43.123+0200",
+      "level": "INFO",
+      "id": 734,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-2",
+      "serviceName": "ReportingService",
+      "serviceUUID": "0000019d4e3cf386-5ca802",
+      "message": "Report data collected from 12 sources: DB, Cache, Analytics, Warehouse"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:43.789+0200",
+      "level": "WARNING",
+      "id": 735,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-3",
+      "serviceName": "ReportingService",
+      "serviceUUID": "0000019d4e3cf386-5ca803",
+      "message": "One source returned empty result: 3rd-party-metrics-api"
+    },
+    {
+      "timestamp": "2026-09-01T08:15:44.345+0200",
+      "level": "INFO",
+      "id": 736,
+      "logger": "com.l7tech.log.custom.ifwFrameworkTrace",
+      "threadId": "-1",
+      "serviceName": "ReportingService",
+      "serviceUUID": "0000019d4e3cf386-5ca804",
+      "message": "Report generated successfully and sent to: admin@company.com, size: 4.2MB"
+    }
+  ],
+  "metadata": {
+    "total_logs": 36,
+    "timestamp_generated": "2026-09-14T00:00:00Z",
+    "log_levels": {
+      "INFO": 24,
+      "WARNING": 8,
+      "ERROR": 4
+    },
+    "services": [
+      "PaymentGateway",
+      "DataService",
+      "AuthService",
+      "NotificationService",
+      "AnalyticsService",
+      "ReportingService"
+    ]
+  }
+}

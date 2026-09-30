@@ -1,0 +1,95 @@
+# ==============================================
+# Docker Compose para Log Analyzer Agent
+# Versión Standalone (compatible con cualquier OLLAMA)
+# ==============================================
+
+version: '3.8'
+
+services:
+  log-analyzer-agent:
+    # Opción 1: Usar imagen local construida
+    # image: log-analyzer-agent:latest
+    
+    # Opción 2: Construir desde Dockerfile (descomentar si se desea)
+    build:
+      context: .
+      dockerfile: Dockerfile
+      cache_from:
+        - log-analyzer-agent:latest
+    
+    image: log-analyzer-agent:latest
+    container_name: log-analyzer-agent
+    
+    restart: unless-stopped
+    
+    # Puerto expuesto
+    ports:
+      - "${AGENT_PORT:-5000}:5000"
+    
+    # Variables de entorno
+    environment:
+      # Flask Configuration
+      - FLASK_ENV=${FLASK_ENV:-production}
+      - FLASK_APP=api_optimized.py
+      - PORT=5000
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      
+      # OLLAMA Configuration (REQUERIDO)
+      # Apunta a tu instancia de OLLAMA (local o remota)
+      - OLLAMA_API_URL=${OLLAMA_API_URL:-http://host.docker.internal:11434}
+      - MODEL_NAME=${MODEL_NAME:-log-analyzer-agent}
+      - OLLAMA_TIMEOUT=${OLLAMA_TIMEOUT:-30}
+      
+      # ServiceNow Integration (Opcional)
+      - SERVICENOW_INSTANCE=${SERVICENOW_INSTANCE:-}
+      - SERVICENOW_CLIENT_ID=${SERVICENOW_CLIENT_ID:-}
+      - SERVICENOW_CLIENT_SECRET=${SERVICENOW_CLIENT_SECRET:-}
+      - SERVICENOW_USERNAME=${SERVICENOW_USERNAME:-}
+      - SERVICENOW_PASSWORD=${SERVICENOW_PASSWORD:-}
+      - SERVICENOW_CREATE_INCIDENTS=${SERVICENOW_CREATE_INCIDENTS:-false}
+      - SERVICENOW_INCIDENT_CATEGORY=${SERVICENOW_INCIDENT_CATEGORY:-Software}
+      - SERVICENOW_ASSIGNMENT_GROUP=${SERVICENOW_ASSIGNMENT_GROUP:-}
+      - SERVICENOW_DEDUP_MODE=${SERVICENOW_DEDUP_MODE:-pattern}
+      
+      # Logging Configuration
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    
+    # Volúmenes para persistencia
+    volumes:
+      # Logs de la aplicación
+      - ./logs:/app/logs
+      # Cache de respuestas (mejorar rendimiento)
+      - agent-cache:/app/.cache
+      # Configuración local (opcional)
+      - ./.env:/app/.env:ro
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    # Límites de recursos
+    deploy:
+      resources:
+        limits:
+          cpus: '${AGENT_CPU_LIMIT:-2}'
+          memory: ${AGENT_MEMORY_LIMIT:-2G}
+        reservations:
+          cpus: '${AGENT_CPU_RESERVE:-1}'
+          memory: ${AGENT_MEMORY_RESERVE:-1G}
+    
+    # Red
+    networks:
+      - log-analyzer-network
+
+volumes:
+  agent-cache:
+    driver: local
+
+networks:
+  log-analyzer-network:
+    driver: bridge
