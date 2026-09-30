@@ -1,0 +1,9 @@
+# =========================================================================
+# DEPENDENCIAS DEL SISTEMA - LOG-ANALYZER-AGENT
+# =========================================================================
+
+flask
+requests
+pydantic
+gunicorn
+python-dotenv 
