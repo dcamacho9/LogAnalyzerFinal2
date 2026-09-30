@@ -10,6 +10,7 @@ RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requeriments.txt
 
 COPY . .
+RUN test -f /app/api_optimized.py
 
 EXPOSE 10000
 
