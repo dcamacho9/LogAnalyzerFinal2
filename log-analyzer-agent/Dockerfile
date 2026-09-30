@@ -1,83 +1,32 @@
-# ==============================================
-# Dockerfile para Log Analyzer Agent + API
-# Optimizado para Producción
-# ==============================================
+# 1. Imagen base oficial de Python (ligera y optimizada)
+FROM python:3.11-slim
 
-FROM docker.m.daocloud.io/library/python:3.11-slim as builder
+# 2. Evita que Python escriba archivos .pyc en el disco y asegura que los logs salgan inmediatamente
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-# Instalar dependencias de compilación
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /tmp
-COPY requeriments.txt .
-
-# Compilar wheels
-RUN pip wheel --no-cache-dir --no-deps --wheel-dir /tmp/wheels -r requeriments.txt
-
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir pandas
-
-COPY . .
-
-# ==============================================
-# Stage 2: Runtime
-# ==============================================
-
-FROM docker.m.daocloud.io/library/python:3.11-slim
-
-LABEL maintainer="DevOps Team"
-LABEL description="Log Analyzer Agent + API with OLLAMA Integration"
-LABEL version="2.0"
-
-# Configurar variables de entorno
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1 \
-    FLASK_APP=api.py \
-    FLASK_ENV=production \
-    PORT=5000
-
-# Instalar solo dependencias de runtime necesarias
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    ca-certificates \
-    tini \
-    && rm -rf /var/lib/apt/lists/*
-
-# Crear directorio de trabajo
+# 3. Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar wheels desde builder
-COPY --from=builder /tmp/wheels /tmp/wheels
-COPY requeriments.txt .
+# 4. Instala dependencias del sistema necesarias (si usas paquetes como gcc, curl, etc.)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
-# Instalar dependencias Python desde wheels
-RUN pip install --upgrade pip setuptools wheel && \
-    pip install --no-cache /tmp/wheels/* && \
-    rm -rf /tmp/wheels
+# 5. Copia solo los archivos de dependencias primero para aprovechar la caché de capas de Docker
+COPY requirements.txt .
 
-# Copiar código de la aplicación
+# 6. Instala las dependencias de Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 7. Copia el resto del código del proyecto al contenedor
 COPY . .
 
-# Crear usuario no-root (seguridad)
-RUN groupadd -r agentuser && \
-    useradd -r -g agentuser -u 1000 agentuser && \
-    chown -R agentuser:agentuser /app
-
-USER agentuser
-
-# Exponer puerto (Render asignará dinámicamente)
+# 8. Expón el puerto por defecto (Render asignará la variable $PORT automáticamente)
 EXPOSE 5000
 
-# Usar tini para manejar señales correctamente
-ENTRYPOINT ["/usr/bin/tini", "--"]
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --retries=3 --start-period=40s \
-    CMD curl -f http://localhost:5000/api/health || exit 1
-
-# Comando por defecto: ejecutar API con modo unbuffered
-CMD ["python", "-u", "api.py"]
+# 9. Comando de arranque usando Gunicorn (servidor de producción)
+# Importante: Reemplaza "app:app" por "nombre_de_tu_archivo:variable_flask"
+# Por ejemplo, si tu archivo se llama main.py y la app es app = Flask(__name__), usa: main:app
+CMD ["sh", "-c", "gunicorn app:app --bind 0.0.0.0:${PORT:-5000} --workers 2 --timeout 120"]
